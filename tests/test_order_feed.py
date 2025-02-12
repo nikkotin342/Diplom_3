@@ -38,7 +38,7 @@ class TestOrderFeed:
         assert order_feed.id_all_user(id_order) == True
 
     @allure.title('Увеличение счетчика заказов за все время')
-    def test_id_order_in_order_feed(self, driver):
+    def test_increasing_order_counter_all_time(self, driver):
         main_page = MainPage(driver)
         order_feed = OrderFeedPage(driver)
         login_page = LoginPage(driver)
@@ -59,7 +59,7 @@ class TestOrderFeed:
         assert order_feed.quantity_order_all() != old_order
 
     @allure.title('Увеличение счетчика заказов за сегодня')
-    def test_id_order_in_order_feed(self, driver):
+    def test_increasing_order_counter_all_today(self, driver):
         main_page = MainPage(driver)
         order_feed = OrderFeedPage(driver)
         login_page = LoginPage(driver)
@@ -80,7 +80,7 @@ class TestOrderFeed:
         assert order_feed.quantity_order_today() != old_order
 
     @allure.title('появление нового заказа в разделе работа')
-    def test_id_order_in_order_feed(self, driver):
+    def test_new_order_in_page_work(self, driver):
         main_page = MainPage(driver)
         login_page = LoginPage(driver)
         order_feed = OrderFeedPage(driver)
@@ -93,10 +93,10 @@ class TestOrderFeed:
         login_page.without_element_order()
         main_page.drag_and_drop_main()
         main_page.click_place_an_order()
-        num_order = main_page.check_num_order()
+        num_order = f'0{main_page.check_num_order()}'
         main_page.click_exit_window_order()
         main_page.click_order_feed()
-        return order_feed.order_in_work(num_order) == True
+        assert order_feed.order_in_work(num_order) == True
 
 
 

@@ -66,6 +66,8 @@ class MainPage(BasePage):
 
     @allure.step("найти id моего заказа")
     def check_num_order(self):
+        self.find_element_visual(MainPageLocators.ORDER_WINDOW_APLOAD)
+        self.find_element_invisual(MainPageLocators.ORDER_WINDOW_APLOAD)
         return self.add_text(MainPageLocators.ID_MY_ORDER)
 
 

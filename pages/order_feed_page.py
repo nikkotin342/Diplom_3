@@ -25,7 +25,7 @@ class OrderFeedPage(BasePage):
         for element in elements:
             if id_my_order == element.text:
                 return True
-        return True
+        return False
 
     @allure.step("Найти количество заказов за все вермя")
     def quantity_order_all(self):
@@ -37,9 +37,10 @@ class OrderFeedPage(BasePage):
 
     @allure.step("Проверка на то что мой заказ лежит в списке заказов в работе")
     def order_in_work(self, id_my_order):
+        self.find_element_invisual(OrderFeedLocators.ORDERS_ALL_READY)
         elements = self.find_all_elements(OrderFeedLocators.ID_ORDER_WORK)
 
         for element in elements:
             if id_my_order == element.text:
                 return True
-        return True
+        return False

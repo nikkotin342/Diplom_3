@@ -41,3 +41,7 @@ class MainPageLocators:
 
     # Найти id моего заказа
     ID_MY_ORDER = (By.XPATH, "//*[@class = 'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']")
+
+    # Проверка что окно закзка прогрузилось
+    ORDER_WINDOW_APLOAD = (By.XPATH, "//div[contains(@class, 'Modal_modal_opened__3ISw4')]")
+

@@ -24,11 +24,11 @@ class LoginPage(BasePage):
 
     @allure.step("Клик по кнопке ВОЙТИ")
     def click_button_entrance(self):
-        self.click_to_element(LoginLocators.BUTTON_ENTER)
+        self.click_text_button(LoginLocators.BUTTON_ENTER)
 
     @allure.step("Клик по кнопке КОНСТРУКТОР")
     def click_button_designer(self):
-        self.click_to_element(LoginLocators.BUTTON_DESIGNER)
+        self.click_text_button(LoginLocators.BUTTON_DESIGNER)
 
     @allure.step("Ожидание когда появится кнопка войти в аккаунт/оформить заказ")
     def without_element_order(self):

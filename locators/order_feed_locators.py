@@ -9,7 +9,7 @@ class OrderFeedLocators:
     WINDOW_ORDER = (By.XPATH, "//*[contains(@class, 'text text_type_main-medium')]")
 
     # НАйти id всех заказов
-    ALL_ID_ORDERS = (By.XPATH, "//*[contains(@class, 'text text_type_main-medium')]/../..//*[contains(@class, 'OrderHistory_textBox__3lgbs')]")
+    ALL_ID_ORDERS = (By.XPATH, "//*[contains(@class, 'text text_type_digits-default')]")
 
     # Найти количество всех заказов
     QUANTITY_ORDER_ALL = (By.XPATH, "//*[text() = 'Выполнено за все время:']/following::*[@class][1]")
@@ -19,4 +19,9 @@ class OrderFeedLocators:
 
     # Найти все заказы в работе
     ID_ORDER_WORK = (By.XPATH, "//*[text() = 'В работе:']/following::li[@class][6]")
+
+    # Проверка что надпись все закзы готовы исчезла
+    ORDERS_ALL_READY = (By.XPATH, "//li[text()='Все текущие заказы готовы!']")
+
+
 
